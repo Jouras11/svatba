@@ -424,6 +424,36 @@
     font-size: 2rem;
   }
 
+  /* INFO GRID */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
+
+  .info-card {
+    background: var(--cream);
+    padding: 1.8rem;
+    border-left: 3px solid var(--accent);
+  }
+  .info-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .info-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .info-card p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
   /* TIMELINE */
   .timeline {
     position: relative;
@@ -494,8 +524,8 @@
 <nav>
   <a href="#pribeh">Příběh</a>
   <a href="#galerie">Galerie</a>
-  <a href="#misto">Místo</a>
   <a href="#program">Program</a>
+  <a href="#info">Info</a>
   <a href="#rsvp">Účast</a>
 </nav>
 
@@ -598,34 +628,6 @@
   </div>
 </section>
 
-<!-- VENUE -->
-<section id="misto">
-  <div class="section-inner">
-    <p class="section-label">Kde a kdy</p>
-    <h2 class="section-title">Místo <em>konání</em></h2>
-    <div class="title-line"></div>
-    <p style="color: var(--mid); font-size:0.95rem; line-height:1.7;">Celý den se odehraje na jednom místě — od obřadu přes přípitky až po taneční parket pod hvězdami.</p>
-
-    <div class="venue-grid">
-      <div class="venue-card reveal">
-        <span class="venue-tag">Obřad</span>
-        <h3>Ceremonie</h3>
-        <p>Zámecká zahrada<br>Sobota 20. června 2026<br><strong>14:00</strong></p>
-      </div>
-      <div class="venue-card reveal">
-        <span class="venue-tag">Oslava</span>
-        <h3>Recepce & večeře</h3>
-        <p>Velký sál, zámek<br>Od <strong>15:30</strong> do noci</p>
-      </div>
-      <div class="venue-card reveal" style="grid-column: span 2;">
-        <span class="venue-tag">Adresa</span>
-        <h3>Místo konání</h3>
-        <p>📍 Doplňte adresu místa konání · GPS: 50.0000, 15.0000<br>Parkování k dispozici na místě. Doporučujeme sdílet dopravu.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PROGRAM -->
 <section id="program" style="background: var(--cream);">
   <div class="section-inner">
@@ -635,78 +637,107 @@
 
     <div class="timeline">
       <div class="tl-item reveal">
-        <div class="tl-time">14:00</div>
+        <div class="tl-time">12:00</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <strong>Příchod hostů</strong>
+          <p>Vítáme vás — občerstvení a přivítání</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-time">13:00</div>
         <div class="tl-dot"></div>
         <div class="tl-content">
           <strong>Svatební obřad</strong>
-          <p>Slavnostní ceremonie v zámecké zahradě</p>
+          <p>Slavnostní ceremonie na místě konání</p>
         </div>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-time">15:30</div>
+        <div class="tl-time">14:00</div>
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <strong>Přípitky & přivítání hostů</strong>
-          <p>Šampaňské, fotografování a první gratulace</p>
+          <strong>Fotografování</strong>
+          <p>Společné fotografie novomanželů a hostů</p>
         </div>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-time">16:30</div>
+        <div class="tl-time">15:00</div>
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <strong>Svatební hostina</strong>
-          <p>Slavnostní večeře ve velkém sále</p>
+          <strong>Obědový raut</strong>
+          <p>Slavnostní hostina a přípitky</p>
         </div>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-time">18:30</div>
+        <div class="tl-time">~17:00</div>
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <strong>První tanec</strong>
-          <p>Markéta a Jiří zahajují taneční část večera</p>
+          <strong>Novomanželský tanec & krájení dortu</strong>
+          <p>Sladká chvíle a první tanec Markéty a Jiřího</p>
         </div>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-time">19:00</div>
+        <div class="tl-time">~18:00</div>
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <strong>Krájení dortu</strong>
-          <p>Sladká chvíle, na kterou se těšíme</p>
-        </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-time">19:30</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <strong>Podvazková ceremonie</strong>
-          <p>Házení podvazku — tradice pro svobodné pány</p>
+          <strong>Hry a zábava</strong>
+          <p>Připravujeme pro vás překvapení 🎉</p>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-time">20:00</div>
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <strong>Taneční zábava</strong>
-          <p>Hudba, tanec a oslava až do noci</p>
+          <strong>DJ & taneční zábava</strong>
+          <p>Hudba a tanec až do noci</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="galerie">
+<!-- INFO -->
+<section id="info" style="background: var(--sand);">
   <div class="section-inner">
-    <p class="section-label">Fotografie</p>
-    <h2 class="section-title" style="color:var(--cream);">Naše <em>vzpomínky</em></h2>
+    <p class="section-label">Vše co potřebujete vědět</p>
+    <h2 class="section-title">Praktické <em>informace</em></h2>
     <div class="title-line"></div>
-    <p style="color: var(--mid); font-size:0.9rem; margin-bottom:0;">Sem přijdou vaše fotografie — zásnuby, výlety, první společné momenty.</p>
-    <div class="gallery-grid">
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
+    <div class="info-grid">
+      <div class="info-card reveal">
+        <div class="info-icon">👗</div>
+        <h3>Dress code</h3>
+        <p>Nemáme žádné striktní požadavky na oblečení — oblečte se tak, aby vám bylo dobře a příjemně. Budeme rádi za eleganci, ale hlavně za vaši pohodu.</p>
+      </div>
+      <div class="info-card reveal">
+        <div class="info-icon">🎁</div>
+        <h3>Dárky</h3>
+        <p>Žijeme spolu už nějakou dobu a vše podstatné máme. Největším dárkem pro nás bude vaše přítomnost. Pokud nám ale přesto chcete udělat radost, příspěvek do společné pokladničky nás zahřeje u srdce.</p>
+      </div>
+      <div class="info-card reveal">
+        <div class="info-icon">🚗</div>
+        <h3>Odvoz domů</h3>
+        <p>Zajistili jsme odvoz pro ty, kteří nebudou moct řídit. Více informací k dispozici na místě — nebojte se zeptat.</p>
+      </div>
+      <div class="info-card reveal">
+        <div class="info-icon">💬</div>
+        <h3>Dotazy?</h3>
+        <p>Pokud máte jakékoliv otázky, napište nám — rádi zodpovíme vše potřebné.</p>
+      </div>
+      <div class="info-card reveal" style="grid-column: span 2;">
+        <div class="info-icon">📍</div>
+        <h3>Místo konání</h3>
+        <p>Blatenský Dvůr, Blato 33, Pardubice<br>
+        <a href="https://mapy.cz/s/blatensky-dvur-pardubice" target="_blank" style="color:var(--accent);">Zobrazit na mapě →</a><br><br>
+        <strong>Příchod hostů:</strong> od 12:00<br>
+        <strong>Obřad:</strong> 13:00<br>
+        <strong>Obědový raut:</strong> od ~15:00<br>
+        <strong>DJ & zábava:</strong> od 20:00 do noci</p>
+      </div>
+      <div class="info-card reveal" style="grid-column: span 2;">
+        <div class="info-icon">🅿️</div>
+        <h3>Parkování</h3>
+        <p>Na místě je k dispozici parkoviště s kapacitou <strong>XX míst</strong>. Parkování je zdarma. Pokud přijedete více lidí z jednoho směru, doporučujeme sdílet dopravu.</p>
+      </div>
     </div>
   </div>
 </section>
