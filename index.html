@@ -9,6 +9,7 @@
 <meta property="og:url" content="https://jouras11.github.io/svatba">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
+<meta property="og:image" content="https://jouras11.github.io/svatba/og.jpeg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -172,9 +173,7 @@
     flex-wrap: wrap;
   }
 
-  .countdown-item {
-    text-align: center;
-  }
+  .countdown-item { text-align: center; }
 
   .countdown-num {
     font-family: 'Cormorant Garamond', serif;
@@ -203,9 +202,7 @@
   }
 
   /* SECTIONS SHARED */
-  section {
-    padding: 6rem 2rem;
-  }
+  section { padding: 6rem 2rem; }
 
   .section-inner {
     max-width: 720px;
@@ -228,87 +225,40 @@
     margin: 1.2rem 0 2rem;
   }
 
-  /* STORY */
-  #pribeh { background: var(--cream); }
-
-  .story-entry {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s, transform 0.6s;
-  }
-  .story-entry.visible { opacity: 1; transform: none; }
-
-  .story-year {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: var(--accent);
-    line-height: 1.2;
-  }
-
-  .story-text p {
-    color: var(--mid);
-    line-height: 1.7;
-    font-size: 0.95rem;
-  }
-  .story-text strong {
-    display: block;
-    color: var(--dark);
-    font-weight: 400;
-    margin-bottom: 0.25rem;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-  }
-
-  /* VENUE */
-  #misto { background: var(--sand); }
-
-  .venue-grid {
+  /* INFO GRID */
+  .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     margin-top: 2rem;
   }
-  @media (max-width: 600px) { .venue-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
 
-  .venue-card {
+  .info-card {
     background: var(--cream);
-    padding: 2rem;
+    padding: 1.8rem;
     border-left: 3px solid var(--accent);
   }
-
-  .venue-card h3 {
+  .info-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .info-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
   }
-
-  .venue-card p {
+  .info-card p {
     font-size: 0.88rem;
     color: var(--mid);
     line-height: 1.6;
   }
 
-  .venue-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-  }
-
   /* RSVP */
   #rsvp { background: var(--cream); }
 
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
+  .form-group { margin-bottom: 1.5rem; }
 
   label {
     display: block;
@@ -332,9 +282,7 @@
     outline: none;
     transition: border-color 0.2s;
   }
-  input:focus, select:focus, textarea:focus {
-    border-bottom-color: var(--accent);
-  }
+  input:focus, select:focus, textarea:focus { border-bottom-color: var(--accent); }
   select { cursor: pointer; }
   textarea { resize: vertical; min-height: 80px; }
 
@@ -390,123 +338,6 @@
     margin-bottom: 0.5rem;
   }
 
-  /* GALLERY placeholder */
-  #galerie { background: var(--dark); }
-  #galerie .section-label { color: var(--accent); }
-  #galerie .section-title { color: var(--cream); }
-  #galerie .title-line { background: var(--accent); }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-    margin-top: 2rem;
-  }
-  @media (max-width: 600px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-
-  .gallery-item {
-    aspect-ratio: 1;
-    background: #2a2a27;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #444;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    overflow: hidden;
-    position: relative;
-  }
-  .gallery-item:first-child { grid-column: span 2; aspect-ratio: 2/1; }
-
-  .gallery-placeholder-icon {
-    opacity: 0.3;
-    font-size: 2rem;
-  }
-
-  /* INFO GRID */
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
-
-  .info-card {
-    background: var(--cream);
-    padding: 1.8rem;
-    border-left: 3px solid var(--accent);
-  }
-  .info-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-  .info-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-  }
-  .info-card p {
-    font-size: 0.88rem;
-    color: var(--mid);
-    line-height: 1.6;
-  }
-
-  /* TIMELINE */
-  .timeline {
-    position: relative;
-    margin-top: 1rem;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 90px;
-    top: 0; bottom: 0;
-    width: 1px;
-    background: var(--sand);
-  }
-  .tl-item {
-    display: grid;
-    grid-template-columns: 80px 20px 1fr;
-    gap: 0 1rem;
-    align-items: start;
-    margin-bottom: 2rem;
-    position: relative;
-  }
-  .tl-time {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--accent);
-    text-align: right;
-    padding-top: 0.1em;
-  }
-  .tl-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--accent);
-    margin-top: 0.35em;
-    justify-self: center;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-  .tl-content strong {
-    display: block;
-    font-weight: 400;
-    font-size: 0.95rem;
-    color: var(--dark);
-    margin-bottom: 0.2rem;
-  }
-  .tl-content p {
-    font-size: 0.85rem;
-    color: var(--mid);
-    line-height: 1.5;
-  }
-
   /* scroll reveal */
   .reveal {
     opacity: 0;
@@ -522,9 +353,6 @@
 <body>
 
 <nav>
-  <a href="#pribeh">Příběh</a>
-  <a href="#galerie">Galerie</a>
-  <a href="#program">Program</a>
   <a href="#info">Info</a>
   <a href="#rsvp">Účast</a>
 </nav>
@@ -570,132 +398,6 @@
   </div>
 </section>
 
-<!-- STORY -->
-<section id="pribeh">
-  <div class="section-inner">
-    <p class="section-label">Naše cesta</p>
-    <h2 class="section-title">Náš <em>příběh</em></h2>
-    <div class="title-line"></div>
-
-    <div class="story-entry">
-      <div class="story-year">2019</div>
-      <div class="story-text">
-        <strong>První setkání</strong>
-        <p>Potkali jsme se na jedné z těch večerních akcí, ze kterých nečekáte nic výjimečného. A přesto se stalo něco, na co se nezapomíná.</p>
-      </div>
-    </div>
-
-    <div class="story-entry">
-      <div class="story-year">2021</div>
-      <div class="story-text">
-        <strong>Společný domov</strong>
-        <p>Rozhodli jsme se udělat velký krok — přestěhovat se dohromady. Spousta krabic, malé kuchyňské hádky a první společné Vánoce.</p>
-      </div>
-    </div>
-
-    <div class="story-entry">
-      <div class="story-year">2024</div>
-      <div class="story-text">
-        <strong>Zásnuby</strong>
-        <p>Na jednom výletu, s výhledem, který si ani jeden z nás dneska nedokáže přesně popsat — Jiří se zeptal. Markéta řekla ano.</p>
-      </div>
-    </div>
-
-    <div class="story-entry">
-      <div class="story-year">2026</div>
-      <div class="story-text">
-        <strong>Svatba — 20. června</strong>
-        <p>A teď vás zveme, abyste byli součástí toho nejdůležitějšího dne.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="galerie">
-  <div class="section-inner">
-    <p class="section-label">Fotografie</p>
-    <h2 class="section-title" style="color:var(--cream);">Naše <em>vzpomínky</em></h2>
-    <div class="title-line"></div>
-    <p style="color: var(--mid); font-size:0.9rem; margin-bottom:0;">Sem přijdou vaše fotografie — zásnuby, výlety, první společné momenty.</p>
-    <div class="gallery-grid">
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
-      <div class="gallery-item"><span class="gallery-placeholder-icon">◻</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAM -->
-<section id="program" style="background: var(--cream);">
-  <div class="section-inner">
-    <p class="section-label">Co nás čeká</p>
-    <h2 class="section-title">Program <em>dne</em></h2>
-    <div class="title-line"></div>
-
-    <div class="timeline">
-      <div class="tl-item reveal">
-        <div class="tl-time">12:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <strong>Příchod hostů</strong>
-          <p>Vítáme vás — občerstvení a přivítání</p>
-        </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-time">13:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <strong>Svatební obřad</strong>
-          <p>Slavnostní ceremonie na místě konání</p>
-        </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-time">14:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <strong>Fotografování</strong>
-          <p>Společné fotografie novomanželů a hostů</p>
-        </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-time">15:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <strong>Obědový raut</strong>
-          <p>Slavnostní hostina a přípitky</p>
-        </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-time">~17:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <strong>Novomanželský tanec & krájení dortu</strong>
-          <p>Sladká chvíle a první tanec Markéty a Jiřího</p>
-        </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-time">~18:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <strong>Hry a zábava</strong>
-          <p>Připravujeme pro vás překvapení 🎉</p>
-        </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-time">20:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <strong>DJ & taneční zábava</strong>
-          <p>Hudba a tanec až do noci</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- INFO -->
 <section id="info" style="background: var(--sand);">
   <div class="section-inner">
@@ -703,6 +405,14 @@
     <h2 class="section-title">Praktické <em>informace</em></h2>
     <div class="title-line"></div>
     <div class="info-grid">
+      <div class="info-card reveal">
+        <div class="info-icon">📍</div>
+        <h3>Místo konání</h3>
+        <p>Blatenský Dvůr, Blato 33, Pardubice<br>
+        <a href="https://mapy.com/cs/turisticka?q=Blatensk%C3%BD%20Dv%C5%AFr%2C%20Blato%2033%2C%20Pardubice&source=firm&id=2509018&ds=2&x=15.7648381&y=49.9905992&z=17" target="_blank" style="color:var(--accent);">Zobrazit na mapě →</a><br><br>
+        <strong>Příchod hostů:</strong> od 12:00<br>
+        <strong>Obřad:</strong> 13:00</p>
+      </div>
       <div class="info-card reveal">
         <div class="info-icon">👗</div>
         <h3>Dress code</h3>
@@ -714,29 +424,9 @@
         <p>Žijeme spolu už nějakou dobu a vše podstatné máme. Největším dárkem pro nás bude vaše přítomnost. Pokud nám ale přesto chcete udělat radost, příspěvek do společné pokladničky nás zahřeje u srdce.</p>
       </div>
       <div class="info-card reveal">
-        <div class="info-icon">🚗</div>
-        <h3>Odvoz domů</h3>
-        <p>Zajistili jsme odvoz pro ty, kteří nebudou moct řídit. Více informací k dispozici na místě — nebojte se zeptat.</p>
-      </div>
-      <div class="info-card reveal">
         <div class="info-icon">💬</div>
         <h3>Dotazy?</h3>
         <p>Pokud máte jakékoliv otázky, napište nám — rádi zodpovíme vše potřebné.</p>
-      </div>
-      <div class="info-card reveal" style="grid-column: span 2;">
-        <div class="info-icon">📍</div>
-        <h3>Místo konání</h3>
-        <p>Blatenský Dvůr, Blato 33, Pardubice<br>
-        <a href="https://mapy.cz/s/blatensky-dvur-pardubice" target="_blank" style="color:var(--accent);">Zobrazit na mapě →</a><br><br>
-        <strong>Příchod hostů:</strong> od 12:00<br>
-        <strong>Obřad:</strong> 13:00<br>
-        <strong>Obědový raut:</strong> od ~15:00<br>
-        <strong>DJ & zábava:</strong> od 20:00 do noci</p>
-      </div>
-      <div class="info-card reveal" style="grid-column: span 2;">
-        <div class="info-icon">🅿️</div>
-        <h3>Parkování</h3>
-        <p>Na místě je k dispozici parkoviště s kapacitou <strong>XX míst</strong>. Parkování je zdarma. Pokud přijedete více lidí z jednoho směru, doporučujeme sdílet dopravu.</p>
       </div>
     </div>
   </div>
@@ -831,7 +521,7 @@
   setInterval(updateCountdown, 1000);
 
   // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal, .story-entry');
+  const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
@@ -843,7 +533,6 @@
   reveals.forEach(el => observer.observe(el));
 
   // RSVP — Google Sheets backend
-  // ⚠️ Po nasazení Apps Scriptu vlož URL sem:
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzPigKqY2-GyNIyHiBDhHlDTLr0Lb-NNzfhem6dUniYzTjAzTaeOxyJJCPgsS3Cffhc/exec';
 
   document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
@@ -855,12 +544,12 @@
     errEl.style.display = 'none';
 
     const data = {
-      jmeno:       document.getElementById('f-name').value,
-      ucast:       document.getElementById('f-attend').value,
-      dospeli:     document.getElementById('f-count').value,
-      deti:        document.getElementById('f-children').value,
-      poznamka:    document.getElementById('f-note').value,
-      cas:         new Date().toLocaleString('cs-CZ')
+      jmeno:    document.getElementById('f-name').value,
+      ucast:    document.getElementById('f-attend').value,
+      dospeli:  document.getElementById('f-count').value,
+      deti:     document.getElementById('f-children').value,
+      poznamka: document.getElementById('f-note').value,
+      cas:      new Date().toLocaleString('cs-CZ')
     };
 
     try {
