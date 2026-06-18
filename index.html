@@ -255,8 +255,61 @@
     line-height: 1.6;
   }
 
+  /* TIMELINE / HARMONOGRAM */
+  #harmonogram {
+    background: var(--cream);
+  }
+
+  .timeline {
+    position: relative;
+    margin-top: 2.5rem;
+    padding-left: 2.2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.3rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 1px;
+    background: var(--sand);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2.1rem;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.2rem;
+    top: 0.35rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--cream);
+  }
+
+  .timeline-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1.2;
+  }
+
+  .timeline-event {
+    font-size: 0.95rem;
+    color: var(--dark);
+    margin-top: 0.2rem;
+  }
+
   /* RSVP */
-  #rsvp { background: var(--cream); }
+  #rsvp { background: var(--sand); }
 
   .form-group { margin-bottom: 1.5rem; }
 
@@ -353,6 +406,7 @@
 <body>
 
 <nav>
+  <a href="#harmonogram">Harmonogram</a>
   <a href="#info">Info</a>
   <a href="#rsvp">Účast</a>
 </nav>
@@ -394,6 +448,53 @@
     <div class="countdown-item">
       <span class="countdown-num" id="cd-seconds">—</span>
       <span class="countdown-label">Sekund</span>
+    </div>
+  </div>
+</section>
+
+<!-- HARMONOGRAM -->
+<section id="harmonogram">
+  <div class="section-inner">
+    <p class="section-label">Jak bude den probíhat</p>
+    <h2 class="section-title">Harmonogram <em>dne</em></h2>
+    <div class="title-line"></div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-time">12:00</div>
+        <div class="timeline-event">Příchod hostů</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">13:00</div>
+        <div class="timeline-event">Svatební obřad</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">14:00</div>
+        <div class="timeline-event">Společné focení</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">14:30</div>
+        <div class="timeline-event">Zahájení obědového rautu</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">Průběžně</div>
+        <div class="timeline-event">Krájení svatebních dortů</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">18:30</div>
+        <div class="timeline-event">Zahájení večerního rautu</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">Průběžně</div>
+        <div class="timeline-event">Hra o svatební kytici</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">20:00</div>
+        <div class="timeline-event">První novomanželský tanec</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">21:00</div>
+        <div class="timeline-event">Poctivý hovězí guláš</div>
+      </div>
     </div>
   </div>
 </section>
